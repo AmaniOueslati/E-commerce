@@ -1,5 +1,7 @@
-package com.amani.ecommerce.exception;
+package com.amani.ecommerce.handler;
 
+import com.amani.ecommerce.exception.CustomerNotFoundException;
+import com.amani.ecommerce.handler.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

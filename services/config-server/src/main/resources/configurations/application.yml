@@ -1,0 +1,17 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+name:
+  value: amani
+spring:
+  cloud:
+    config:
+      override-system-properties: false #enable override any prperty that exists in the config server and in the own  config properties  of the microservice
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

@@ -1,4 +1,4 @@
-package com.amani.ecommerce.exception;
+package com.amani.ecommerce.handler;
 
 import java.util.Map;
 
