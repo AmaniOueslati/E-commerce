@@ -64,7 +64,7 @@ public class OrderService {
          customer
         );
 
-        paymentClient.requestOrderPayment(paymentRequest)
+        paymentClient.requestOrderPayment(paymentRequest);
 
 
 
