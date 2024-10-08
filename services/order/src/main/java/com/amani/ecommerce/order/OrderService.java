@@ -2,6 +2,8 @@ package com.amani.ecommerce.order;
 import com.amani.ecommerce.kafka.OrderConfirmation;
 import com.amani.ecommerce.orderline.OrderLineRequest;
 import com.amani.ecommerce.orderline.OrderLineService;
+import com.amani.ecommerce.payment.PaymentClient;
+import com.amani.ecommerce.payment.PaymentRequest;
 import com.amani.ecommerce.product.ProductClient;
 
 import com.amani.ecommerce.kafka.orderProducer;
@@ -28,6 +30,7 @@ public class OrderService {
     private final OrderMapper mapper;
     private final OrderLineService orderLineService;
     private final orderProducer orderProducer;
+    private final PaymentClient paymentClient ;
 
 
 
@@ -53,6 +56,15 @@ public class OrderService {
                     )
             );
         }
+
+        var paymentRequest = new PaymentRequest(
+        request.amount(),
+        request.paymentMethod(),
+        order.getId(), order.getReference(),
+         customer
+        );
+
+        paymentClient.requestOrderPayment(paymentRequest)
 
 
 
